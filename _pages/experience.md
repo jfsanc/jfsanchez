@@ -7,22 +7,22 @@ permalink: /experience/
 
 {% include banner.html heading="Sobre mi" content="El Marketing hace parte de mi gestión profesional, me gusta enseñar, leer libros y escribir, aprendí desarrollo y estadística en aplicación con el lenguaje Python 🐍." %}
 <section id="projects" class="section">
-    {% include headingWithImage.html h="Projects" lvl=2 img="/assets/img/folder.png" alt="📁" %}
+    {% include headingWithImage.html h="Proyectos" lvl=2 img="/assets/img/folder.png" alt="📁" %}
     <div id="project-grid" class="card-grid">
         <!-- Projects get populated here dynamically (see index.js) -->
         <div id="project-placeholder" class="project">
             <header>
-                <p><strong>Want to see more of my work?</strong></p>
+                <p><strong>¿Quieres ver más de mi trabajo?</strong></p>
             </header>
             <div>
-                <p>Check out my other repos:</p>
+                <p>Mira mis otros repositorios:</p>
                 <a href="https://github.com/AleksandrHovhannisyan?tab=repositories">{% include svg.html svg="github" %}</a>
             </div>
         </div>
     </div>
 </section>
 <section id="skills" class="section">
-    {% include headingWithImage.html h="Destrezas y habilidades" lvl=2 img="/assets/img/juggler.png" alt="🤹" %}
+    {% include headingWithImage.html h="Destrezas y Habilidades" lvl=2 img="/assets/img/juggler.png" alt="🤹" %}
     <div id="skill-grid">
         {% for skill in site.data.skills %}
         <div>
@@ -54,7 +54,7 @@ permalink: /experience/
     </div>
 </section>
 <section id="work" class="section">
-    {% include headingWithImage.html h="Work Experience" lvl=2 img="/assets/img/briefcase.png" alt="💼" %}
+    {% include headingWithImage.html h="Experiencia Laboral" lvl=2 img="/assets/img/briefcase.png" alt="💼" %}
     <section class="card-grid">
     {% for job in site.data.work %}
         <section class="job">
@@ -77,7 +77,7 @@ permalink: /experience/
     </section>
 </section>
 <section id="education" class="section">
-    {% include headingWithImage.html h="Education" lvl=2 img="/assets/img/graduation-cap.png" alt="🎓" %}
+    {% include headingWithImage.html h="Educación" lvl=2 img="/assets/img/graduation-cap.png" alt="🎓" %}
     {% for institution in site.data.education %}
     <div class="institution collapsible">
         <div class="collapsible-header">

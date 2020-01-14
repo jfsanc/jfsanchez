@@ -22,7 +22,7 @@ permalink: /experience/
     </div>
 </section>
 <section id="skills" class="section">
-    {% include headingWithImage.html h="Skills and Abilities" lvl=2 img="/assets/img/juggler.png" alt="🤹" %}
+    {% include headingWithImage.html h="Destrezas y habilidades" lvl=2 img="/assets/img/juggler.png" alt="🤹" %}
     <div id="skill-grid">
         {% for skill in site.data.skills %}
         <div>

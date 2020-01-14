@@ -4,8 +4,10 @@ customJS: ["loadFullRepoData"]
 permalink: /experience/
 ---
 
+<img src="C:\Users\EQUIPO\Documents\GitHub\jfsanchez.pw\assets\img\profile-photo.png" style="zoom:75%;" />
 
 {% include banner.html heading="Sobre mi" content="El Marketing hace parte de mi gestión profesional, me gusta enseñar, leer libros y escribir, aprendí desarrollo y estadística en aplicación con el lenguaje Python 🐍." %}
+
 <section id="projects" class="section">
     {% include headingWithImage.html h="Proyectos" lvl=2 img="/assets/img/folder.png" alt="📁" %}
     <div id="project-grid" class="card-grid">

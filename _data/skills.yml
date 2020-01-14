@@ -38,10 +38,3 @@
       rating: 5 
     - name: LibreOffice
       rating: 4
-
-- category: Lenguajes
-  items:
-    - name: Dart
-      rating: 3
-    - name: Python
-      rating: 4

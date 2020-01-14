@@ -4,7 +4,7 @@ customJS: ["loadFullRepoData"]
 permalink: /experience/
 ---
 
-<img src="\assets\img\profile-photo.png" style="zoom:75%;" />
+<img src=".\assets\img\profile-photo.png" style="zoom:75%;" />
 
 {% include banner.html heading="Sobre mi" content="El Marketing hace parte de mi gestión profesional, me gusta enseñar, leer libros y escribir, aprendí desarrollo y estadística en aplicación con el lenguaje Python 🐍." %}
 

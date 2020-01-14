@@ -16,7 +16,7 @@ permalink: /experience/
             </header>
             <div>
                 <p>Mira mis otros repositorios:</p>
-                <a href="https://github.com/AleksandrHovhannisyan?tab=repositories">{% include svg.html svg="github" %}</a>
+                <a href="https://github.com/jfsanc">{% include svg.html svg="github" %}</a>
             </div>
         </div>
     </div>

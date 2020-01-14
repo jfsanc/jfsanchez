@@ -6,8 +6,8 @@ customJS: ["loadPreviewRepoData"]
 
 <section id="hero-banner">
     <div id="hero-text">
-        <h1 class="title">I'm a developer who loves color and UI design.</h1>
-        <p class="subtitle">Interested in working with me? <a href="/contact">Get in touch</a>!</p>
+        <h1 class="title">Soy apasionado por el Marketing y la Educación.</h1>
+        <p class="subtitle">Quieres Escribirme? <a href="/contact">Contactame</a>!</p>
     </div>
     <img src="/assets/img/profile-photo.png" alt="My profile photo" />
 </section>

@@ -90,7 +90,7 @@ permalink: /experience/
         </div>
         <div class="collapsible-content">
             <div class="courses">
-                <h3><em>Notable Coursework</em></h3>
+                <h3><em>Perfil Ocupacional</em></h3>
                 <ul>
                     {% for course in institution.courses %}
                     <li>{{ course }}</li>
@@ -98,7 +98,7 @@ permalink: /experience/
                 </ul>
             </div>
             <div class="awards">
-                <h3><em>Awards and Recognitions</em></h3>
+                <h3><em>Premios y reconocimientos</em></h3>
                 <ul>
                     {% for award in institution.awards %}
                     <li>{{ award }}</li>

@@ -1,0 +1,207 @@
+@import 'colors';
+@import 'settings';
+@import 'mixins';
+
+$topnav-min-height: 64px;
+
+#topnav {
+    background-color: var(--nav-bg-color);
+    box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.8);
+    left: 0;
+    min-height: $topnav-min-height;
+    position: fixed;
+    right: 100%;
+    top: 0;
+    width: 100%;
+    /* This is to ensure that it always appears above everything. */
+    z-index: 100;
+    @include centered;
+    @include transition;
+
+    * {
+        color: var(--text-color-nav);
+        font-weight: bold;
+    }
+
+    .nav-container {
+        align-items: center;
+        display: flex;
+        grid-column: 2;
+        height: $topnav-min-height;
+        justify-content: space-between;
+    }
+    
+    #logo {
+        align-items: center;
+        background: none;
+        display: flex;
+        flex-wrap: nowrap;
+
+        img {
+            height: 21px;
+            margin-bottom: 3px;
+        }
+    }
+
+    #website-name {
+        margin-left: 5px;
+        width: 230px;
+        @include transition;
+
+        &:hover {
+            color: white;
+        }
+    }
+
+    #theme-switch-container {
+        display: flex;
+        height: 30px;
+        justify-content: center;
+    }
+
+    #theme-switch {
+        --switch-width: 52px;
+        align-items: center;
+        align-self: center;
+        border-radius: 100px;        
+        cursor: pointer;
+        display: flex;
+        flex-wrap: nowrap;   
+        font-size: 0.9rem;
+        height: 22px;
+        justify-content: space-between;
+        margin-right: 5px;
+        padding-left: 3px;
+        padding-right: 3px;
+        position: relative;
+        width: var(--switch-width);     
+        @include transition;
+        @include themed(background-color, #747474, #635b4b);
+
+        #sun, #moon {
+            height: 18px;
+        }
+
+        #knob {
+            --switch-orb-height: 25px;
+            --switch-orb-width: 25px; 
+            background-color: rgb(207, 207, 207);
+            border: 1.3px solid $primary-color;
+            border-radius: 50%;
+            height: var(--switch-orb-height);
+            left: 0;    
+            position: absolute;
+            right: calc(var(--switch-width) - var(--switch-orb-width));
+            width: var(--switch-orb-width);
+            @include transition;
+
+            .dark & {
+                background-color: $secondary-color-light;
+                border: 1.3px solid $secondary-color;
+                box-shadow: 0 0 5px 0 lighten($secondary-color-light, 75%);
+                left: calc(var(--switch-width) - var(--switch-orb-width));
+                right: var(--orb-distance-from-edge);
+            }
+        }
+
+        &:active {
+            #knob {
+                box-shadow: 0 0 10px 0 $secondary-color-light;
+                height: calc(var(--switch-orb-height) - 4px);
+                width: calc(var(--switch-orb-width) - 4px);
+            }
+        }
+    }
+
+    .nav-links {
+        background-color: var(--nav-bg-color);
+        box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.8);
+        color: var(--text-color-nav);
+        /* Mobile menu dropdown takes up 100% of the viewport width */
+        display: block;
+        left: 0;
+        list-style-type: none;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: calc(#{$topnav-min-height} / 2);
+        max-height: 0px;
+        /* Otherwise, the link text will be visible (will overflow its container) when max-height is 0px */
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        right: 0;
+        top: 20px;
+        @include transition;
+
+        .active-nav-link {
+            color: white;
+        }
+
+        li {
+            margin: 40px auto;
+            text-align: center;
+        }
+
+        a {
+            @include underlined-link(#ffffff);
+            vertical-align: middle;
+
+            &:hover {
+                color: white;
+            }
+        }
+    }
+
+    .navbar-hamburger {
+        fill: var(--text-color-nav);
+        flex-shrink: 0;
+        height: 27px;
+        width: 27px;
+    }   
+}
+
+@media only screen and (min-width: 670px) {
+
+    #topnav {
+        #theme-switch {
+            margin-left: 40px;
+        }
+
+        .nav-links {
+            align-items: center;
+            box-shadow: none;
+
+            /* Show the links on a single row on the navbar */
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            
+            margin: 0;
+            /* Note 1: I'm using !important here only as a last resort to cover an edge case. Suppose
+            you open the navbar on a small screen (< 700 px) and then close it. Per the JavaScript,
+            the inline style for .nav-links will be set to 'max-height: 0px' when the menu closes. If we then switch
+            to a wider view (e.g., by flipping the device to horizontal orientation), the inline style of
+            'max-height: 0px' will end up overriding the style below, effectively making the navbar
+            links invisible. !important allows us to override the inline style set by the script. */
+    
+            /* Note 2: This is admittedly a bit hacky, but it will suffice. The first max-height is for MS Edge and IE 11,
+            which do not yet support intrinsic & extrinsic sizing (and will thus reject the second max-height). However, all other 
+            browsers that do support max-content will override the first style and instead apply the second one. */
+            max-height: 100px !important;
+            max-height: max-content !important;
+            position: static;
+    
+            li {
+                margin: 0;
+            }
+    
+            a {
+                margin-left: 40px;
+            }
+        }
+    
+       .navbar-hamburger {
+           display: none;
+        }
+    }
+}

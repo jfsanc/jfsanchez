@@ -1,0 +1,75 @@
+@import 'settings';
+
+@mixin transition($what: all, $duration: $transition-duration) {
+    transition: ease $what $duration;
+}
+
+@mixin headings {
+    h1, h2, h3, h4, h5, h6 {
+        @content;
+    }
+}
+
+@mixin underlined-link($color: var(--link-color)) {
+    position: relative;
+    text-decoration: none;
+    border: none;
+    @include transition;
+
+    &::after {
+        content: '';
+        height: 3px;
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0%;
+        background-color: $color;
+        @include transition;
+    }
+
+    &:hover::after {
+        width: 100%; 
+        left: 0;
+    }
+}
+
+@mixin solid-button($bgColor, $textColor) {
+    background-color: $bgColor;
+    color: $textColor;
+    border: 3px solid $bgColor;
+
+    &:focus, &:hover {
+        background-color: $textColor;
+        color: $bgColor;
+    }
+}
+
+@mixin hollow-button($bgColor, $textColor) {
+    background-color: $bgColor;
+    color: $textColor;
+    border: 3px solid $textColor;
+
+    &:focus, &:hover {
+        background-color: $textColor;
+        color: $bgColor;
+    }
+}
+
+@mixin themed($attribute, $light, $dark) {
+    #{$attribute}: $light;
+
+    .dark & {
+        #{$attribute}: $dark;
+    }
+}
+
+@mixin fixedColor($color) {
+    &, &::selection {
+        color: $color;
+    }
+}
+
+@mixin centered($marginMin: 1.2rem, $contentMax: $page-max-width) {
+    display: grid;
+    grid-template-columns: minmax($marginMin, 1fr) minmax(0, $contentMax) minmax($marginMin, 1fr);
+}

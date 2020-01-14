@@ -1,0 +1,97 @@
+- category: Programming Languages
+  items:
+    - name: C++
+      rating: 5
+    - name: Python
+      rating: 5
+    - name: TypeScript (ES6)
+      rating: 5
+    - name: Kotlin
+      rating: 4
+    - name: C# (Unity)
+      rating: 3
+
+- category: Frontend & Backend
+  items:
+    - name: HTML5
+      rating: 5
+    - name: CSS/SASS/LESS
+      rating: 5
+    - name: React (+Ant Design)
+      rating: 5
+    - name: SQL (Oracle, postgres)
+      rating: 4
+    - name: NodeJS, Express
+      rating: 3
+
+- category: Software Development
+  items:
+    - name: OOP
+      rating: 5
+    - name: Debugging
+      rating: 5
+    - name: Code review
+      rating: 4
+    - name: Scrum
+      rating: 4
+    - name: Refactoring
+      rating: 4
+    - name: Game dev
+      rating: 3
+    - name: Design patterns
+      rating: 3
+
+- category: Operating Systems
+  items:
+    - name: Windows (7-10)
+      rating: 5
+    - name: Linux (Ubuntu)
+      rating: 4
+    - name: Linux kernel
+      rating: 4
+    - name: VMs (VirtualBox)
+      rating: 4
+    - name: macOS (Mojave)
+      rating: 4
+
+- category: IDEs and Editors
+  items:
+    - name: VS Code
+      rating: 5
+    - name: Visual Studio
+      rating: 5
+    - name: Qt Creator
+      rating: 5
+    - name: Android Studio
+      rating: 3
+
+- category: Collaboration
+  items:
+    - name: Git, GitHub
+      rating: 5
+    - name: Slack
+      rating: 5
+    - name: G Suite
+      rating: 5
+    - name: Jira
+      rating: 4
+    - name: Confluence
+      rating: 3
+
+- category: Languages
+  items:
+    - name: English
+      rating: 5
+    - name: Armenian
+      rating: 4
+    - name: German
+      rating: 3
+
+- category: Other
+  items:
+    - name: Copy editing
+      rating: 5
+    - name: Technical writing
+      rating: 5 
+    - name: Copy writing
+      rating: 4

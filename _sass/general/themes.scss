@@ -1,0 +1,66 @@
+@import 'colors';
+@import 'mixins';
+
+html.light {
+    --main-bg-color: #ffffff;
+    --nav-bg-color: #2c2c2c;
+    --hero-bg-color: #1c1c1c;
+    --selection-bg-color: rgba(218, 227, 231, 0.8);
+
+    --text-color-normal: #{$denim};
+    --text-color-nav: #cecdcd;
+    --text-color-emphasis: #3c4e56;
+    --link-color: #{$primary-color-link};
+
+    --button-bg-color: #{$primary-color};
+    --button-bg-hover-color: #{$primary-color-light};
+
+    --card-bg-color: #ffffff;
+    
+    --tag-bg-color: #dae3e7;
+    --tag-text-color: #{$primary-color};
+
+    --code-bg-color: #e4e4e4;
+    --code-text-color: #{$denim};
+
+    --hover-color-general: #f6f6f6;
+
+    --form-bg-color: #f6f6f6;
+    --form-input-color: white;
+
+    --blockquote-bg-color: rgb(206, 206, 206);
+    --blockquote-text-color: #484e55;
+    --spoiler-color: #dae3e7;
+}
+
+html.dark {
+    --main-bg-color: #1a1a1a;
+    --nav-bg-color: #292929;
+    --hero-bg-color: #202020;
+    --selection-bg-color: rgba(156, 147, 135, 0.8);
+
+    --text-color-normal: #adadad;
+    --text-color-emphasis: #cccccc;
+    --text-color-nav: #cecdcd;
+    --link-color: #{$secondary-color-link};
+
+    --button-bg-color: #bda17f;
+    --button-bg-hover-color: #ddbc94;
+
+    --card-bg-color: #292929;
+
+    --tag-bg-color: #9c9387;
+    --tag-text-color: #000000;
+
+    --code-bg-color: #646464;
+    --code-text-color: #e2e1e1;
+
+    --hover-color-general: #292929;
+
+    --form-bg-color: #292929;
+    --form-input-color: #3b3b3b;
+
+    --blockquote-bg-color: rgb(63, 62, 62);
+    --blockquote-text-color: #aaaaaa;
+    --spoiler-color: #9c9387;
+}

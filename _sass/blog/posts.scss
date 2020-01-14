@@ -1,0 +1,310 @@
+@import 'colors';
+@import 'mixins';
+@import 'settings';
+
+.blog-overview {
+    margin-top: 40px;
+}
+
+.category-links {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 80px;
+    max-width: 400px;
+
+    .active-category {
+        // underline, see underlined-link in mixins.scss
+        &::after {
+            width: 100%; 
+            left: 0;
+        }
+    }
+
+    a {
+        @include underlined-link;
+        margin-right: 10px;
+    }
+}
+
+.post-title {
+    margin-bottom: 20px;
+}
+
+.post-header {
+    margin-top: 75px;
+}
+
+.post-stats {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1.4rem;
+    font-style: italic;
+
+    .post-date,
+    .post-reading-length,
+    .post-categories {
+        align-items: center;
+        display: flex;
+        margin-bottom: 15px;
+        margin-right: 20px;
+        @include transition;
+
+        svg {
+            @include transition;
+            fill: var(--text-color-normal);
+            height: 15px;
+            margin-right: 5px;
+            width: 15px;
+        }
+    }
+
+    .post-categories a {
+        @include underlined-link;
+    }
+}
+
+.post-category {
+    margin-top: 50px;
+}
+
+.post-preview {
+    grid-gap: 30px;
+    grid-template-rows: 200px auto;
+
+    .post-thumbnail {
+        align-self: center;
+
+        img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;;
+        }
+    }
+
+    .post-title {
+        color: var(--link-color);
+    }
+
+    .post-preview-body {
+        grid-template-rows: 1fr 1fr;
+
+        .post-description {
+            margin-bottom: 0px;
+            margin-top: 0px;
+        }
+    }
+}
+
+#post {
+    grid-column: 1 / 4;
+    @include centered;
+
+    & > * {
+        grid-column: 2;
+    }
+
+    .post-stats {
+        margin-bottom: 30px;
+    }
+
+    @include headings {
+        margin-bottom: $paragraph-spacing;
+    }
+
+    h2, h3 {
+        margin-top: -60px;
+        padding-top: 90px;
+    }
+
+    figure {
+        figcaption {
+            font-size: 1.4rem;
+            font-style: italic;
+            text-align: center;
+            @include transition;
+        }
+
+        picture {
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+    }
+
+    figure,
+    picture {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    img,
+    iframe,
+    .pro-con-table {
+        max-width: 100%;
+    }
+
+    img {
+        border-radius: 5px;
+        cursor: zoom-in;
+        max-width: 100%;
+    }
+
+    .img-with-shadow {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+    }
+
+    figure,
+    picture,
+    iframe,
+    .pro-con-table,
+    div.highlighter-rouge {
+        margin-bottom: $img-spacing;
+        // Add the remainder so the top and bottom are spaced equally
+        margin-top: calc(#{$img-spacing} - #{$paragraph-spacing});
+    }
+
+    li:not(:last-child) {
+        margin-bottom: 0.5 * $paragraph-spacing + 0px;
+    }
+
+    ol li::marker {
+        @include transition;
+        color: var(--text-color-emphasis);
+        font-weight: bold;
+        margin-right: 5px;
+    }
+
+    ul,
+    ol {
+        @include transition;
+        margin-bottom: $paragraph-spacing;
+        margin-top: calc(30px - #{$paragraph-spacing});
+        padding-left: 40px;
+    }
+
+    blockquote {
+        background: var(--blockquote-bg-color);
+        border-left: 4px solid #6b6a6a;
+        margin-bottom: $paragraph-spacing;
+        padding: 1.3em;
+        @include transition;
+
+        p {
+            color: var(--blockquote-text-color);
+            margin: 0;
+        }
+    }
+
+    .code-header {
+        z-index: 2;
+
+        .file-name {
+            background-color: #3b3b3b;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            box-shadow: 0 3px 3px 0px rgba(0, 0, 0, 0.3);
+            color: #bcbcbc;
+            // paragraph-spacing - img-spacing will always be negative, which is what we need
+            margin-bottom: calc(#{$paragraph-spacing} - #{$img-spacing});
+            margin-top: calc(#{$img-spacing} - #{$paragraph-spacing});
+            padding: 10px 20px;
+            @include transition;
+
+            &::before {
+                content: "📂";
+            }
+        }
+
+        & + .highlighter-rouge .highlight {
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+    }
+
+    div.highlighter-rouge {
+        border-radius: 5px;
+        box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.4);
+
+        code {
+            padding: 0;
+        }
+    }
+
+    .MathJax_Display {
+        margin-bottom: $img-spacing;
+        margin-top: calc(#{$img-spacing} - #{$paragraph-spacing});
+    }
+
+    .spoiler {
+
+        &,
+        * {
+            background-color: var(--spoiler-color);
+            color: var(--spoiler-color);
+        }
+
+        margin-bottom: 1px;
+
+        margin-top: 1px;
+        @include transition;
+
+        &:hover {
+
+            &,
+            * {
+                background-color: transparent;
+                color: var(--blockquote-text-color);
+            }
+
+            code {
+                background-color: var(--code-bg-color);
+                color: var(--code-text-color);
+            }
+        }
+    }
+
+    .pro-con-table {
+        border-radius: 5px;
+        border: solid 5px var(--blockquote-bg-color);
+        color: var(--blockquote-text-color);
+        @include transition;
+        table-layout: fixed;
+        text-align: center;
+        border-spacing: 0;
+
+        th {
+            background-color: var(--blockquote-bg-color);
+            @include transition(background-color);
+        }
+
+        td {
+            width: 50%;
+        }
+
+        th, td {
+            padding: 20px;
+        }
+    }
+
+    #fair-use-rationale {
+        margin-top: 50px;
+
+        p,
+        ul {
+            font-style: italic;
+        }
+    }
+}
+
+code {
+    background-color: var(--code-bg-color);
+    border-radius: 3px;
+    color: var(--code-text-color);
+    font-family: Inconsolata, Courier New;
+    padding: 1px 3px;
+    @include transition;
+}

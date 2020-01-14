@@ -1,0 +1,204 @@
+@import 'mixins';
+@import 'settings';
+@import 'fonts';
+
+::selection {
+    background-color: var(--selection-bg-color);
+    color: black;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--nav-bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--button-bg-hover-color);
+    border-radius: 2px;
+
+    &:hover {
+        background: var(--button-bg-color);
+    }
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: var(--main-bg-color);
+    color: var(--text-color-normal);
+    display: grid;
+    font-family: $font-family-primary, $font-family-backup;
+    font-size: $font-size;
+    grid-template-rows: 1fr 80px;
+    line-height: $line-height;
+    min-height: 100vh;
+    position: relative;
+    row-gap: 64px;
+    @include transition(background-color);
+}
+
+#page-content {
+    grid-row: 1;
+    min-width: 0; // https://css-tricks.com/preventing-a-grid-blowout/
+    padding-top: 64px;
+    @include centered;
+    
+    & > * {
+        grid-column: 2;
+    }
+}
+
+.banner {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 670px;
+    text-align: center;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1.35rem;
+}
+
+/* Links an entire parent container, but the parent must be set to relative position */
+.container-link {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    text-decoration: none;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+strong {
+    color: var(--text-color-emphasis);
+    @include transition;
+}
+
+@include headings {
+    color: var(--text-color-emphasis);
+    line-height: 1.4;
+    margin-bottom: 0.5em;
+    @include transition;
+}
+
+.heading {
+    text-align: center;
+}
+
+.subtitle {
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.2em;
+}
+
+.heading-with-image {
+    margin-top: -90px;
+    padding-top: 90px;
+}
+
+a {
+    text-decoration: none;
+
+    &, blockquote & {
+        color: var(--link-color);
+        font-weight: bold;
+        @include transition;
+    }
+}
+
+p {
+    color: var(--text-color-normal);
+    margin-bottom: $paragraph-spacing;
+    @include transition;
+}
+
+.heading-with-image {
+    align-items: center;
+    display: flex;
+    margin-bottom: 40px;
+
+    &, * {
+        vertical-align: middle;
+    }
+
+    img {
+        margin-left: 10px;
+        width: 1.1em;
+    }
+}
+
+.section {
+    margin-top: 100px;
+}
+
+hr {
+    border: 1.2px solid rgb(145, 145, 145);
+    margin-bottom: 8px;
+    margin-top: 8px;
+    @include transition;
+}
+
+p, ul, ol, figcaption {
+    a {
+        @include underlined-link;
+    }
+}
+
+#error {
+    align-items: center;
+    animation: backgroundScroll 40s linear infinite;
+    animation-fill-mode: forwards;
+    background-color: #1a1a1a;
+    /* https://www.transparenttextures.com/stardust.html */
+    background-image: url('/assets/img/stardust.png');
+    display: flex;
+    flex-direction: column;
+    grid-column: 1;
+    height: 100%;
+    justify-content: center;
+    left: 0;
+    margin-top: 0;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    text-shadow: black;
+
+    @keyframes backgroundScroll {
+        from {background-position: 0 0;}
+        to {background-position: 798px 0;}
+    }
+
+    h1 {
+        color: #cccccc;
+    }
+
+    p {
+        color: #adadad;
+    }
+
+    a {
+        color: $secondary-color-link;
+        @include underlined-link($secondary-color-link);
+    }
+}

@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+<article id="post">
+  <header class="post-header">
+      <h1 class="post-title">{{ page.title }}</h1>
+      {% include posts/stats.html target=page categories=page.categories %}
+  </header>
+  <!-- Don't wrap so we can take advantage of CSS grid, until subgrids become a thing at least -->
+  {{ content }}
+</article>
+
+{% if page.needsCodeFont %}
+<link href="https://fonts.googleapis.com/css?family=Inconsolata&display=swap" rel="stylesheet">
+{% endif %}
+{% if page.needsLatex %}
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script>
+window.MathJax = {
+  'HTML-CSS': {
+    linebreaks: { automatic: true, width: 'container' }
+  }
+};
+</script>
+{% endif %}

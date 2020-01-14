@@ -1,0 +1,278 @@
+@import 'mixins';
+@import 'settings';
+@import 'colors';
+
+.project {
+    /* Header, description, footer, respectively */
+    grid-template-rows: max-content 1fr max-content;
+
+    .project-name {
+        align-self: center;
+        font-size: 1.8rem;
+        grid-area: heading;
+    }
+
+    .project-icon {
+        display: inline-block;
+        margin-right: 5px;
+
+        * {
+            vertical-align: middle;
+            width: 24px;
+        }
+    }
+    
+    .project-rating {
+        align-items: center;
+        align-self: center;
+        display: flex;
+        font-size: 0.9em;
+        grid-area: rating;
+        justify-self: center;
+        @include transition;
+
+        .star {
+            fill: var(--button-bg-color);
+            height: 16px;
+            margin-right: 3px;
+            width: 16px;
+        }
+    }
+
+    .description {
+        margin-bottom: 0px;
+        margin-top: 0px;
+        @include transition;
+    }
+
+    .topics {
+        display: flex;
+        flex-wrap: wrap;
+        grid-row: 3;
+    
+        .topic {
+            font-size: 1.6rem;
+            margin-bottom: 0px;
+            margin-right: 8px;
+            margin-top: 8px;
+        }
+    }
+
+    /* All project cards except the placeholder get a background and box shadow */
+    &:not(#project-placeholder) {
+        header {
+            display: grid;
+            grid-template-areas: "heading heading rating";
+        }
+    }
+}
+
+#project-placeholder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    a {
+        border-radius: 50%;
+        display: inline-block;
+        height: 50px;
+        margin-top: 20px;
+        text-decoration: none;    
+        width: 50px;
+
+        svg {
+            @include transition;
+            @include themed(fill, $brand-github, $brand-github-alt);
+        }
+    }
+}
+
+#skills {
+    #skill-grid {
+        column-gap: 100px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        row-gap: 40px;
+    }
+
+    .skill-category {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+
+    .skill-item {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-bottom: 10px;
+        @include transition(background-color);
+
+        &:hover {
+            background-color: var(--hover-color-general);
+
+            .tooltip {
+                display: block;
+            }
+        }
+
+        .skill-name {
+            grid-column: 1;
+            @include transition;
+        }
+        
+        .skill-rating {
+            align-items: center;
+            grid-column: 2;
+            height: 100%;
+            position: relative;
+            display: flex;
+            justify-content: flex-end;
+
+            .star {
+                margin-left: 4.7px;
+            }
+
+            .tooltip {
+                // Align the tooltip to the right of each skill rating
+                $tooltip-width: 100px;
+                width: $tooltip-width;
+                left: calc(100% - #{$tooltip-width});
+            }
+        }
+    }
+}
+
+.star {
+    height: 18px;
+    width: 18px;
+
+    &.star-filled {
+        fill: var(--button-bg-color);
+        @include transition;
+    }
+
+    &.star-empty {
+        fill: #adacac;
+        @include transition;
+        @include themed(fill, #adacac, #474747);
+    }
+}
+
+#work {
+    h2 {
+        margin-bottom: 3rem;
+    }
+
+    .job {
+        display: grid;
+        grid-template-rows: max-content 1fr max-content;
+
+        .job-title {
+            font-size: 2rem;
+        }
+
+        .date-range {
+            font-size: 1.6rem;
+            font-style: italic;
+            @include themed(color, $denim, #898989);
+        }
+
+        .responsibilities {
+            @include transition;
+            margin-bottom: 1.6rem;
+            padding-left: 20px;
+
+            li {
+                margin-bottom: calc(#{$paragraph-spacing} / 2);
+            }
+        }
+
+        .technologies-used {
+            display: flex;
+            padding-left: 20px;
+
+            .tech {
+                border-radius: 5px;
+                font-weight: bold;
+                margin-right: 5px;
+                padding: 5px;
+                @include transition;
+            }
+
+            .react {
+                @include themed(background-color, rgba($brand-react, 0.2), $brand-react);
+                @include themed(color, #02728f, #0a5c72);
+            }
+
+            .typescript {
+                @include themed(background-color, rgba($brand-typescript, 0.15), $brand-typescript);
+                @include themed(color, lighten($brand-typescript, 10%), #d5d5d5);
+            }
+
+            .grpc {
+                @include themed(background-color, rgba($brand-grpc, 0.2), $brand-grpc);
+                @include themed(color, #1e6f70, #e3e1e1);
+            }
+
+            .upwork {
+                @include themed(background-color, rgba($brand-upwork, 0.3), #45882a);
+                @include themed(color, #2e7611, #cfcfcf);
+            }
+        }
+    }
+}
+
+.institution {
+    margin-top: 40px;
+
+    .collapsible-content {
+        display: grid;
+        /* Mobile first: only one column. Changes to two columns on bigger screens. See media query below. */
+        grid-template-columns: 1fr;
+
+        h3 {
+            font-size: 1.8rem;
+            font-weight: normal;
+            margin-bottom: 21px;
+            margin-left: 20px;
+            margin-top: 21px;
+        }
+
+        ul {
+            margin-bottom: 16px;
+            margin-top: 16px;
+            padding-left: 40px;
+            padding-right: 10px;
+
+            li {
+                margin-bottom: calc(#{$paragraph-spacing} / 2);
+            }
+        }
+        
+        p {
+            padding-left: 10px;
+        }
+
+        .awards {
+            /* Only matters on mobile, where the awards are stacked underneath courses */
+            border-top: solid var(--collapsible-content-border-width) var(--button-bg-color);
+            @include transition;
+        }
+    }
+}
+
+/* Line up courses and awards side by side on larger screens */
+@media only screen and (min-width: $device-cutoff-large) {
+
+    .institution .collapsible-content {
+        grid-template-columns: auto auto;
+        grid-template-rows: 1fr;
+
+        .awards {
+            /* Now that it's lined up to the right of the courses, there's no need for a top border */
+            border-left: solid var(--collapsible-content-border-width) var(--button-bg-color);
+            border-top: none;
+            @include transition(border);
+        }
+    }
+}

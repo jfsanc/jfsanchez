@@ -9,7 +9,7 @@ permalink: /contact/
         <img src="/assets/img/envelope.png" alt="📧">
     </h2>
     <div id="contact-information">
-        <form action="https://formspree.io/hire.aleksandr@gmail.com" method="POST" spellcheck="false">
+        <form action="https://formspree.io/mgeaapwg" method="POST" spellcheck="false">
             <input type="hidden" name="_subject" value="Thanks for getting in touch!" />
             <label class="required" for="name"><strong>Nombre</strong></label>
             <input type="text" name="name" id="name" required>

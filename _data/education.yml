@@ -1,15 +1,26 @@
-- name: University of Florida
-  degree: B.Sc. in Computer Science
+- name: Universidad Cooperativa de Colombia
+  degree: Administrador de Empresas
   gpa: 4.0
-  years: 2016–2019
+  years: 2011–2016
   courses:
-    - Data structures and algorithms (C++)
-    - Programming language concepts (C++)
-    - Intro to software engineering (GDScript)
-    - Computer architecture, operating systems (C)
-    - Database systems I (React, Node, SQL)
-    - Calculus, linear algebra (MATLAB), stats (R)
+    - Investigación de Mercados
+    - Gestión de Procesos
+    - Economía
+    - Planeación Estrategica
+    - Recurso Humano
+
   awards:
-    - <a href="https://clas.ufl.edu/undergraduate/anderson-scholars/anderson-scholars-listing/">Anderson Scholar Award (Highest Distinction)</a>
-    - Dean's List Award (2016–present)
-    - Bright Futures Academic Scholar (2016–present)
+    - Becado por mejor promedio local.
+
+- name: Corporación Universitaria Minuto de Dios - UNIMINUTO
+  degree: Esp. Gerencia de Proyectos
+  gpa: 4.0
+  years: 2019–2020
+  courses:
+    - Formulación de Proyectos
+    - Evaluación e Proyectos
+    - Ejecución de Proyectos
+    - Metodologia de la Investigación
+
+
+

@@ -54,6 +54,58 @@
     }
 }
 
+#hero-banner-mi {
+    &, * {
+        @include transition;
+    }
+
+    align-items: center;
+    background-color: var(--hero-bg-color);
+    box-shadow: 0 0 5px 0 rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    grid-column: 1 / 4 !important;
+    justify-content: center;
+    min-height: 100px;
+    padding-bottom: 50px;
+    padding-top: 70px;
+    position: relative;
+
+    img {
+        background-color: var(--hero-bg-color);
+        border: 5px solid var(--hero-bg-color);
+        border-radius: 50%;
+        bottom: -70px;
+        height: 140px;
+        position: absolute;
+        width: 140px;
+    }
+    
+    .title, .subtitle {
+        color: white;
+        text-align: center;
+    }
+
+    .title {
+        font-size: 3.5rem;
+    }
+
+    img {
+        margin-top: 20px;
+    }
+
+    a {
+        --hero-link: #64b5f6;
+
+        .dark & {
+            --hero-link: #{$secondary-color-link};
+        }
+
+        color: var(--hero-link);
+    
+        @include underlined-link(var(--hero-link));
+    }
+}
 #featured-projects {
     margin-top: 130px;
 

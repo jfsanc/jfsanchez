@@ -4,7 +4,7 @@ customJS: ["loadFullRepoData"]
 permalink: /experience/
 ---
 
-<section id="hero-banner">
+<section id="hero-banner-mi">
       <img src="./assets/img/profile-photo.png" alt="My profile photo" />
 </section>
 

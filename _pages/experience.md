@@ -1,11 +1,11 @@
 ---
-title: Experience
+title: Sobre mi
 customJS: ["loadFullRepoData"]
 permalink: /experience/
 ---
 
 
-{% include banner.html heading="My experience" content="I try to keep busy while having fun and testing my limits. Between school, side projects, freelancing, and interning, I've gained valuable exposure to a wide variety of interesting technologies and problems." %}
+{% include banner.html heading="Sobre mi" content="El Marketing hace parte de mi gestión profesional, me gusta enseñar, leer libros y escribir, aprendí desarrollo y estadística en aplicación con el lenguaje Python 🐍." %}
 <section id="projects" class="section">
     {% include headingWithImage.html h="Projects" lvl=2 img="/assets/img/folder.png" alt="📁" %}
     <div id="project-grid" class="card-grid">

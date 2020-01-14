@@ -1,4 +1,4 @@
-- category: Programming Languages
+- category: Lenguajes
   items:
     - name: Dart
       rating: 3
@@ -6,34 +6,44 @@
       rating: 4
 
 
-- category: Frontend & Backend
+- category: Marketing
   items:
-    - name: HTML5
-      rating: 5
-    - name: CSS/SASS/LESS
-      rating: 5
-
-
-- category: Operating Systems
-  items:
-    - name: Windows (7-10)
-      rating: 5
-    - name: Linux (Ubuntu)
+    - name: Redes Sociales
       rating: 4
-    - name: macOS (Mojave)
+    - name: Email Marketing
+      rating: 5
+    - name: Diseño Web 
+      rating: 4
+    - name: Outbound marketing
+      rating: 5
+    - name: Inbound marketing 
+      rating: 4
+    
+
+
+- category: Herramientas de Proyectos
+  items:
+    - name: Microsoft Project
+      rating: 4
+    - name: Primavera Project
+      rating: 3
+    - name: Ganttproject
+      rating: 3
+
+- category: Herramientas de Diseño
+  items:
+    - name: CorelDRAW
+      rating: 3
+    - name: Adobe illustrator
+      rating: 3
+    - name: Adobe XD
       rating: 4
 
-- category: IDEs and Editors
+- category: Ofimatica
   items:
-    - name: VS Code
+    - name: Office365
       rating: 5
-    - name: Visual Studio
-
-- category: Other
-  items:
-    - name: Copy editing
-      rating: 5
-    - name: Technical writing
+    - name: Google Documentos
       rating: 5 
-    - name: Copy writing
+    - name: LibreOffice
       rating: 4

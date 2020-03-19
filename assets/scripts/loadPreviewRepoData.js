@@ -63,7 +63,7 @@ function requestRepoData() {
   const request = new XMLHttpRequest();
   request.open(
     'GET',
-    'https://api.github.com/users/AleksandrHovhannisyan/repos',
+    'https://api.github.com/users/jfsanc/repos',
     true
   );
   request.onload = parseRepos;
